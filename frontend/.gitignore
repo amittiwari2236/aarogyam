@@ -1,5 +1,3 @@
-node_modules/
+credentials.json
 .env
-*.log
-dist/
-build/
+node_modules
