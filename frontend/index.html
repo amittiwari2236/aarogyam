@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarogyam | Yoga Booking System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Sticky Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="logo">Aarogyam</div>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" style="color: var(--primary-color);">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="btn-login" id="navLoginBtn">Login</button>
+            <button class="btn-signup" id="navSignupBtn">Sign Up</button>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div id="heroDynamicName" class="hero-dynamic-name fade-in"></div>
+        <div class="hero-content fade-in">
+            <h1>Find Your Inner Peace</h1>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="window.location.href='booking.html'">Book Now</button>
+                <button class="btn-secondary" id="heroSignupBtn">Get a Free Account</button>
+            </div>
+            <p class="small-text">Join thousands of members today</p>
+        </div>
+    </section>
+
+    <!-- About Yoga Preview -->
+    <section class="about-preview fade-in" id="about">
+        <div class="split-section">
+            <div class="split-text">
+                <h2>Welcome to Aarogyam</h2>
+                <p>Yoga is a journey of the self, through the self, to the self. At Aarogyam, we focus on providing a holistic approach to your physical and mental wellbeing. Whether you are a beginner or an advanced practitioner, we have a space for you.</p>
+                <button class="btn-secondary" onclick="window.location.href='about.html'">Learn More About Us</button>
+            </div>
+            <div class="split-image">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Yoga Class">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview Section (Yoga Types) -->
+    <section class="services-preview fade-in" id="services">
+        <h2>Our Services</h2>
+        <div class="feature-cards">
+            <div class="card">
+                <i class="fas fa-book-open fa-3x"></i>
+                <h3>Yoga education</h3>
+            </div>
+            <div class="card">
+                <i class="fas fa-calendar-day fa-3x"></i>
+                <h3>Daily yoga practice classes</h3>
+            </div>
+            <div class="card">
+                <i class="fas fa-campground fa-3x"></i>
+                <h3>Yoga camps and workshops</h3>
+            </div>
+            <div class="card">
+                <i class="fas fa-heartbeat fa-3x"></i>
+                <h3>Yoga therapy services</h3>
+            </div>
+            <div class="card">
+                <i class="fas fa-spa fa-3x"></i>
+                <h3>Meditation and pranayama sessions</h3>
+            </div>
+            <div class="card">
+                <i class="fas fa-microscope fa-3x"></i>
+                <h3>Research-based yoga studies</h3>
+            </div>
+            <div class="card">
+                <i class="fas fa-praying-hands fa-3x"></i>
+                <h3>Spiritual and value-based yoga training</h3>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="btn-primary" onclick="window.location.href='services.html'">View All Services</button>
+        </div>
+    </section>
+
+    <!-- Trainers Preview Section -->
+    <section class="trainers-preview fade-in" style="background: var(--text-light);">
+        <h2>Expert Trainers</h2>
+        <div class="trainers-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; text-align: center;">
+            <div class="t-preview-card" style="padding: 20px;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0h0aeYDB6Mz0fFEUiqy8ynUhsIxDlmwNZAw&s" alt="Dr. Gopal" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; margin-bottom: 15px;">
+                <h3>Dr. Gopal</h3>
+                <p style="color: var(--primary-color);">Yoga Expert</p>
+            </div>
+            <div class="t-preview-card" style="padding: 20px;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa5w4d650iPeuV5MW_4Ec9Ln-o0goL0t42NQ&s" alt="Dr. Chinmay Pandya" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; margin-bottom: 15px;">
+                <h3>Dr. Chinmay Pandya</h3>
+                <p style="color: var(--primary-color);">Philosophy</p>
+            </div>
+            <div class="t-preview-card" style="padding: 20px;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkcEiM-Ds0_CjahhGH2CtrHyeEpBbt5ia0rg&s" alt="Dr. Pranav Pandya" style="border-radius: 50%; width: 150px; height: 150px; object-fit: cover; margin-bottom: 15px;">
+                <h3>Dr. Pranav Pandya</h3>
+                <p style="color: var(--primary-color);">Spiritual Guide</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="btn-secondary" onclick="window.location.href='about.html'">Meet the Team</button>
+        </div>
+    </section>
+
+    <!-- Testimonials Slider -->
+    <section class="testimonials fade-in">
+        <h2>What Our Members Say</h2>
+        <div class="testimonial-cards">
+            <div class="t-card">
+                <p>"The booking system is incredibly easy to use. I love the flexible slots!"</p>
+                <h4>- Sarah M.</h4>
+            </div>
+            <div class="t-card">
+                <p>"Beautiful UI and very fast. Finding my favorite evening class is a breeze."</p>
+                <h4>- David L.</h4>
+            </div>
+            <div class="t-card">
+                <p>"I appreciate the instant confirmations. Highly recommend Aarogyam!"</p>
+                <h4>- Emily R.</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-section brand-section">
+                <h2>Aarogyam</h2>
+                <p>Find inner peace, balance, and harmony through the timeless practice of yoga.</p>
+            </div>
+            <div class="footer-section links-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="booking.html">Booking</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section contact-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:tiwariji.dsvv@gmail.com" style="color:#666;">tiwariji.dsvv@gmail.com</a></p>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:+917488121910" style="color:#666;">+91 74881 21910</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Haripur Kalan, Haridwar, Uttarakhand</p>
+            </div>
+            <div class="footer-section social-section">
+                <h3>Follow Us</h3>
+                <div class="socials">
+                    <a href="https://www.facebook.com/dsvvofficial/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://x.com/dsvvofficial" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/dsvvofficial/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Aarogyam. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Modals for Auth -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            
+            <div class="auth-tabs">
+                <button class="tab-btn active" id="tabLogin">Login</button>
+                <button class="tab-btn" id="tabSignup">Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form active">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit" class="btn-submit">Login</button>
+                <div id="loginMessage" class="message"></div>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signupForm" class="auth-form">
+                <input type="text" id="signupName" placeholder="Full Name" required>
+                <input type="email" id="signupEmail" placeholder="Email" required>
+                <input type="password" id="signupPassword" placeholder="Password" required>
+                <button type="submit" class="btn-submit">Sign Up</button>
+                <div id="signupMessage" class="message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/something" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

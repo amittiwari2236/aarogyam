@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarogyam | Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Sticky Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="logo">Aarogyam</div>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="contact.html" style="color: var(--primary-color);">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button class="btn-login" id="navLoginBtn">Login</button>
+            <button class="btn-signup" id="navSignupBtn">Sign Up</button>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Auth Gated Wrapper -->
+    <div id="authGatedContent" style="display: none; opacity: 0; pointer-events: none; transition: opacity 0.5s ease;">
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Contact Us</h1>
+            <p>We are here to help you. Reach out with any questions or comments.</p>
+        </section>
+
+        <!-- Contact Info & Form -->
+        <section class="contact-page fade-in">
+            <div class="contact-container">
+                <!-- Info & Map -->
+                <div class="contact-info">
+                    <h3>Our Location</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Haripur Kalan, Haridwar, Uttarakhand</p>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+917488121910" style="color: inherit;">+91 74881 21910</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:tiwariji.dsvv@gmail.com" style="color: inherit;">tiwariji.dsvv@gmail.com</a></p>
+                    
+                    <!-- Google Map Placeholder (iframe) -->
+                    <div class="map-embed">
+                        <iframe src="https://maps.google.com/maps?q=Dev%20Sanskriti%20Vishwavidyalaya,%20Haridwar&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-area">
+                    <h3>Send a Message</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="input-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" placeholder="Subject" required>
+                        </div>
+                        <div class="input-group">
+                            <textarea rows="5" placeholder="Your Message Here" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Submit Message</button>
+                        <div id="contactMessage" class="message"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-section brand-section">
+                <h2>Aarogyam</h2>
+                <p>Find inner peace, balance, and harmony through the timeless practice of yoga.</p>
+            </div>
+            <div class="footer-section links-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="booking.html">Booking</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section contact-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:tiwariji.dsvv@gmail.com" style="color:#666;">tiwariji.dsvv@gmail.com</a></p>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:+917488121910" style="color:#666;">+91 74881 21910</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Haripur Kalan, Haridwar, Uttarakhand</p>
+            </div>
+            <div class="footer-section social-section">
+                <h3>Follow Us</h3>
+                <div class="socials">
+                    <a href="https://www.facebook.com/dsvvofficial/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://x.com/dsvvofficial" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/dsvvofficial/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Aarogyam. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Modals for Auth -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <div class="auth-tabs">
+                <button class="tab-btn active" id="tabLogin">Login</button>
+                <button class="tab-btn" id="tabSignup">Sign Up</button>
+            </div>
+            <form id="loginForm" class="auth-form active">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit" class="btn-submit">Login</button>
+                <div id="loginMessage" class="message"></div>
+            </form>
+            <form id="signupForm" class="auth-form">
+                <input type="text" id="signupName" placeholder="Full Name" required>
+                <input type="email" id="signupEmail" placeholder="Email" required>
+                <input type="password" id="signupPassword" placeholder="Password" required>
+                <button type="submit" class="btn-submit">Sign Up</button>
+                <div id="signupMessage" class="message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/something" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
