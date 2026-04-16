@@ -1,4 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
+    function getApiBaseUrl() {
+        const configuredBaseUrl =
+            window.AAROGYAM_API_BASE_URL ||
+            document.body?.dataset.apiBaseUrl ||
+            '';
+
+        if (configuredBaseUrl) {
+            return configuredBaseUrl.replace(/\/+$/, '');
+        }
+
+        const { protocol, hostname, port, origin } = window.location;
+
+        if (protocol === 'http:' || protocol === 'https:') {
+            return origin.replace(/\/+$/, '');
+        }
+
+        return `http://localhost:${port || '3000'}`;
+    }
+
+    function getApiUrl(path) {
+        const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+        return `${getApiBaseUrl()}${normalizedPath}`;
+    }
+
+    async function parseJsonSafely(response) {
+        const rawBody = await response.text();
+
+        if (!rawBody) {
+            return {};
+        }
+
+        try {
+            return JSON.parse(rawBody);
+        } catch (error) {
+            return { error: 'Unexpected server response' };
+        }
+    }
 
     // --- Navbar Scroll Effect ---
     const navbar = document.getElementById('navbar');
@@ -177,12 +214,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const msgBox = document.getElementById('signupMessage');
             
             try {
-                const res = await fetch('/api/signup', {
+                const res = await fetch(getApiUrl('/api/signup'), {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, email, password })
                 });
-                const data = await res.json();
+                const data = await parseJsonSafely(res);
                 if (res.ok) {
                     msgBox.textContent = 'Account created successfully! Please login.';
                     msgBox.className = 'message success';
@@ -206,12 +243,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const msgBox = document.getElementById('loginMessage');
             
             try {
-                const res = await fetch('/api/login', {
+                const res = await fetch(getApiUrl('/api/login'), {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email, password })
                 });
-                const data = await res.json();
+                const data = await parseJsonSafely(res);
                 if (res.ok) {
                     msgBox.textContent = 'Login successful!';
                     msgBox.className = 'message success';
@@ -309,12 +346,12 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
 
             try {
-                const res = await fetch('/api/book', {
+                const res = await fetch(getApiUrl('/api/book'), {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, email, phone, age, yogaType, date, time })
                 });
-                const data = await res.json();
+                const data = await parseJsonSafely(res);
                 
                 if (res.ok) {
                     msgBox.textContent = data.message || 'Booking successful!';
